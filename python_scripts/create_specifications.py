@@ -7,17 +7,15 @@
 # - class_out: predicted class we are checking the robustness of
 def vnnlib_template_2(x1_ref, x2_ref, y_ref, eps_in):
 
-    # assert len(x1_ref) == n_in
     assert eps_in >= 0.0
-    # assert class_out >= 0 and class_out < n_out
 
     lines = []
 
     # intro comment
-    # lines.append("; MNIST robustness to exact L2-ball perturbations:")
-    # lines.append("; a toy VNN-COMP benchmark for the AAAI'26 tutorial.")
-    # lines.append("; Author: Edoardo Manino")
-    # lines.append("")
+    lines.append("; Model robustness to exact L-infinity perturbations:")
+    lines.append("; a VNN-COMP benchmark with multimodal inputs.")
+    lines.append("; Author: Lukas Rohwer")
+    lines.append("")
 
     # tell the verifier to use VNN-LIB 2.0
     lines.append("(vnnlib-version <2.0>)")
@@ -37,20 +35,9 @@ def vnnlib_template_2(x1_ref, x2_ref, y_ref, eps_in):
             lines.append(f"(assert (and (>= X1[0,{i},{j}] {x1_ref[0,i,j] - eps_in}) (<= X1[0,{i},{j}] {x1_ref[0,i,j] + eps_in})))")
     lines.append("")
 
-    # output constraints (negated!)
-    #(assert (or
-    #    (>= Y_0 Y_c)
-    #    (>= Y_1 Y_c)
-    #        ...
-    #    (>= Y_N Y_c)
-    #))
+    # output constraints
     lines.append("; Output Constraints")
-    # lines.append("(assert (or")
-    # for i in range(n_out):
-    #     if i == class_out:
-    #         continue
-    #     lines.append("  (>= Y_" + str(i) + " Y_" + str(class_out) + ")")
-    # lines.append("))")
-    # lines.append("")
+    lines.append(f"(assert (or (< Y[0] {y_ref - eps_in}) (> Y[0] {y_ref + eps_in})))")
+    lines.append("")
 
     return lines
