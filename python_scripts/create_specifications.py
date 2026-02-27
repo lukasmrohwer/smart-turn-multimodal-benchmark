@@ -27,6 +27,7 @@ def vnnlib_template_2(x1_ref, x2_ref, y_ref, eps_in):
     lines.append("    (declare-input X2 float32 [1, 3, 32, 112, 112])")
     lines.append("    (declare-output Y float32 [1, 1])")
     lines.append(")")
+    lines.append("")
 
     # input constraints
     lines.append("; Input Constraints")
