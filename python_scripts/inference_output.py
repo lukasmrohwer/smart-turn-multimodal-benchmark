@@ -10,7 +10,7 @@ def build_session(onnx_path):
     so.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
     return ort.InferenceSession(onnx_path, sess_options=so)
 
-def inference(input_features, pixel_values):
+def inference(input_features, pixel_values, model_path):
     session = build_session(ONNX_MODEL_PATH)
 
     outputs = session.run(
@@ -20,3 +20,4 @@ def inference(input_features, pixel_values):
     probability = outputs[0][0].item()
 
     return probability
+
