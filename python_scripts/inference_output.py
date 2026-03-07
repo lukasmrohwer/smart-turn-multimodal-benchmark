@@ -1,3 +1,5 @@
+# Contains code snippets from susuROBO/Daily, used under the BSD 2-Clause License.
+
 import onnxruntime as ort
 
 ONNX_MODEL_PATH = "onnx/smart-turn-multimodal-cpu.onnx"

@@ -1,12 +1,12 @@
-# create VNN-LIB 2.0 files given the following:
-EPS = 0.05              # size of the input pertubation
-VNN_COMP_TIMEOUT = 100  # per-instance verification timeout
-ONNX_MODEL_PATH = "onnx/smart-turn-multimodal-cpu.onnx"
-
 import csv
 from python_scripts.create_specifications import vnnlib_template_2
 from python_scripts.build_inputs import build_audio_input, build_video_input
 from python_scripts.inference_output import inference
+
+# create VNN-LIB 2.0 files given the following:
+EPS = 0.05              # size of the input pertubation
+VNN_COMP_TIMEOUT = 100  # per-instance verification timeout
+ONNX_MODEL_PATH = "onnx/smart-turn-multimodal-cpu.onnx"
 
 inputs = {
     ("examples/videoplayback.mp3", "examples/videoplayback.mp4")

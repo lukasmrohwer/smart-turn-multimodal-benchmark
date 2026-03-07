@@ -1,3 +1,5 @@
+# Contains code snippets from susuROBO/Daily, used under the BSD 2-Clause License.
+
 import numpy as np
 import av
 import os

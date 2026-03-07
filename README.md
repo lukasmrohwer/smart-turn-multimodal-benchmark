@@ -13,3 +13,11 @@ The video input tensor will take the last 32 frames of the video in 112x112 reso
 #### Benchmark Information
 
 This benchmark was designed to test the capabilities of solvers to verify networks with multiple, multimodal inputs as supported in the new VNN-LIB 2.0 standard. The benchmark simply allows an epsilon pertubation to the values of the audio tensor while maintaining the video tensor as a fixed reference, and asserts that there is no assignment such that the classification of the output changes.
+
+#### Model Provenance
+
+- File: smart-turn-multimodal-cpu.onnx
+
+- Source: Hugging Face (https://huggingface.co/susuROBO/smart-turn-multimodal)
+
+- License: BSD 2-Clause (Copyright © 2026 susuROBO, 2024–2025 Daily)
