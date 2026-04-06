@@ -21,3 +21,7 @@ This benchmark was designed to test the capabilities of solvers to verify networ
 - Source: Hugging Face (https://huggingface.co/susuROBO/smart-turn-multimodal)
 
 - License: BSD 2-Clause (Copyright © 2026 susuROBO, 2024–2025 Daily)
+
+#### Example Data
+
+ - Sourced from the [Meta Casual Conversations Dataset](https://ai.meta.com/datasets/casual-conversations-dataset/)
