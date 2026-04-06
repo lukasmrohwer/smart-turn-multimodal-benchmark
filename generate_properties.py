@@ -21,7 +21,7 @@ for x1, x2 in inputs:
 
     y_ref = inference(x1_ref, x2_ref, ONNX_MODEL_PATH)
 
-    lines = vnnlib_template_2(x1_ref, x2_ref, y_ref, 0.01)
+    lines = vnnlib_template_2(x1_ref, x2_ref, y_ref, EPS)
 
     vnnlib_filename = "./vnnlib/instance_" + str(i) + ".vnnlib2"
     with open(vnnlib_filename, "w") as f:

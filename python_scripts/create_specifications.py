@@ -23,9 +23,9 @@ def vnnlib_template_2(x1_ref, x2_ref, y_ref, eps_in):
 
     # neural network declaration
     lines.append("(declare-network f")
-    lines.append("    (declare-input X1 float32 [1, 80, 800])")
-    lines.append("    (declare-input X2 float32 [1, 3, 32, 112, 112])")
-    lines.append("    (declare-output Y float32 [1, 1])")
+    lines.append("    (declare-input X1 real [1, 80, 800])")
+    lines.append("    (declare-input X2 real [1, 3, 32, 112, 112])")
+    lines.append("    (declare-output Y real [1, 1])")
     lines.append(")")
     lines.append("")
 
