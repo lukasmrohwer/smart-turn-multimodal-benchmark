@@ -4,3 +4,5 @@ transformers
 librosa
 av
 Pillow
+pyOpenSSL>=23.0.0
+cryptography>=39.0.0
