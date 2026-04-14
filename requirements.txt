@@ -1,6 +1,5 @@
 numpy
-onnxruntime
-transformers
+onnxruntime>=1.17.0transformers
 librosa
 av
 Pillow
