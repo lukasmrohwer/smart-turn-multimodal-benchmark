@@ -38,7 +38,8 @@ def vnnlib_template_2(x1_ref, x2_ref, y_ref, eps_in):
         for j in range(32):
             for k in range(112):
                 for l in range(112):
-                    lines.append(f"(assert (== X2[0,{i},{j},{k},{l}] {x2_ref[0,i,j,k,l]}))")
+                    # lines.append(f"(assert (== X2[0,{i},{j},{k},{l}] {x2_ref[0,i,j,k,l]}))")
+                    lines.append(f"(assert (== X2[0,{i},{j},{k},{l}] {x2_ref[0,i,j,k,l]:.8f}))")
     lines.append("")
 
     # output constraints

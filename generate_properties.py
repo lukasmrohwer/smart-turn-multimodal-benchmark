@@ -24,10 +24,10 @@ def main():
     ONNX_MODEL_PATH = "onnx/smart-turn-multimodal-cpu.onnx"
 
     inputs = [
-        ("examples/1.mp3", "examples/1.mp4"),
-        ("examples/2.mp3", "examples/2.mp4"),
-        ("examples/3.mp3", "examples/3.mp4"),
-        ("examples/4.mp3", "examples/4.mp4")
+        ("examples/1.wav", "examples/1.mp4"),
+        ("examples/2.wav", "examples/2.mp4"),
+        ("examples/3.wav", "examples/3.mp4"),
+        ("examples/4.wav", "examples/4.mp4")
     ]
     random.shuffle(inputs)
 
