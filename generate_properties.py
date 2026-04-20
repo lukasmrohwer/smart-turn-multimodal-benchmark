@@ -42,7 +42,7 @@ def main():
 
         lines = vnnlib_template_2(x1_ref, x2_ref, y_ref, EPS)
 
-        vnnlib_filename = "./vnnlib/instance_" + str(i) + ".vnnlib"
+        vnnlib_filename = "vnnlib/instance_" + str(i) + ".vnnlib"
         with open(vnnlib_filename, "w") as f:
             f.writelines(line + "\n" for line in lines)
 
