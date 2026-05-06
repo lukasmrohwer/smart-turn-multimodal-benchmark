@@ -17,7 +17,7 @@ As mentioned, the primary purpose of this benchmark is to test the capabilities 
 
 Then the mathematical property that we seek to verify is of the form:
 
-$$ \forall X_{audio}, X_{video} . \| X_{audio} - X_{audio}^{ref} \|_\infty \le \epsilon  \wedge X_{video} = X_{video}^{ref} \Rightarrow y \le 0.5 \Leftrightarrow y^{(ref)} > 0.5 $$
+$$ \forall X_{audio}, X_{video} . \| X_{audio} - X_{audio}^{ref} \|_\infty \le \epsilon  \wedge X_{video} = X_{video}^{ref} \Rightarrow y > 0.5 \Leftrightarrow y^{(ref)} > 0.5 $$
 
 The VNNLIB 2.0 property encodes the negation of the above property. Therefore, given the input constraints, the solver must attempt to satisfy the following output constraint where the output state (end-of-turn or not) is opposite to the reference output, and return any such adversarial input. If the solver returns UNSAT, the network is proven to be robust within the epsilon for that specific reference input.
 
