@@ -20,7 +20,7 @@ def main():
 
     # create VNN-LIB 2.0 files given the following:
     AUDIO_EPS = 0.05              # size of the input pertubation
-    VIDEO_EPS = 0.05              # size of the input pertubation
+    VIDEO_EPS = 0.03              # size of the input pertubation
     VNN_COMP_TIMEOUT = 100  # per-instance verification timeout
     ONNX_MODEL_PATH = "onnx/smart-turn-multimodal-cpu.onnx"
     num_instances = 1 # max 4
