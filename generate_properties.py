@@ -19,7 +19,8 @@ def main():
     random.seed(seed)
 
     # create VNN-LIB 2.0 files given the following:
-    EPS = 0.05              # size of the input pertubation
+    AUDIO_EPS = 0.05              # size of the input pertubation
+    VIDEO_EPS = 0.05              # size of the input pertubation
     VNN_COMP_TIMEOUT = 100  # per-instance verification timeout
     ONNX_MODEL_PATH = "onnx/smart-turn-multimodal-cpu.onnx"
 
@@ -40,7 +41,7 @@ def main():
 
         y_ref = inference(x1_ref, x2_ref, ONNX_MODEL_PATH)
 
-        lines = vnnlib_template_2(x1_ref, x2_ref, y_ref, EPS)
+        lines = vnnlib_template_2(x1_ref, x2_ref, y_ref, AUDIO_EPS, VIDEO_EPS)
 
         vnnlib_filename = "vnnlib/instance_" + str(i) + ".vnnlib"
         with open(vnnlib_filename, "w") as f:
