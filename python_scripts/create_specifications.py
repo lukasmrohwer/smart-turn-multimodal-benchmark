@@ -1,10 +1,10 @@
 # creates a VNN-LIB 2.0 file (list of text lines) according to a fixed template:
 # Arguments:
-# - n_in: number of inputs to the classifier
-# - n_out: number of output scores from the classifier
-# - x_ref: reference input
-# - eps_in: radius of the input L-infinity perturbation
-# - class_out: predicted class we are checking the robustness of
+# - x1_ref: reference audio input
+# - x2_ref: reference video input
+# - y_ref: reference output
+# - audio_eps: radius of the input L-infinity perturbation for audio
+# - video_eps: radius of the input L-infinity perturbation for video
 def vnnlib_template_2(x1_ref, x2_ref, y_ref, audio_eps, video_eps):
 
     lines = []
