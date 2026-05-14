@@ -26,10 +26,10 @@ def main():
     num_instances = 1 # max 4
 
     inputs = [
-        ("examples/1.wav", "examples/1.mp4"),
-        ("examples/2.wav", "examples/2.mp4"),
-        ("examples/3.wav", "examples/3.mp4"),
-        ("examples/4.wav", "examples/4.mp4")
+        ("examples/1.wav", "examples/1.MP4"),
+        ("examples/2.wav", "examples/2.MP4"),
+        ("examples/3.wav", "examples/3.MP4"),
+        ("examples/4.wav", "examples/4.MP4")
     ]
     random.shuffle(inputs)
 

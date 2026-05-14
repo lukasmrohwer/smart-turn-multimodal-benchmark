@@ -42,9 +42,9 @@ def vnnlib_template_2(x1_ref, x2_ref, y_ref, audio_eps, video_eps):
     # output constraints
     lines.append("; Output Constraints")
     if y_ref > 0.5:
-        lines.append(f"(assert (<= Y[0] 0.5))")
+        lines.append(f"(assert (<= Y[0,0] 0.5))")
     else:
-        lines.append(f"(assert (> Y[0] 0.5))")
+        lines.append(f"(assert (> Y[0,0] 0.5))")
     lines.append("")
 
     return lines

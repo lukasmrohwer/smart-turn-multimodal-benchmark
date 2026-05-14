@@ -2,8 +2,6 @@
 
 import onnxruntime as ort
 
-ONNX_MODEL_PATH = "onnx/smart-turn-multimodal-cpu.onnx"
-
 def build_session(onnx_path):
     """Build ONNX inference session with optimized settings."""
     so = ort.SessionOptions()
@@ -13,7 +11,7 @@ def build_session(onnx_path):
     return ort.InferenceSession(onnx_path, sess_options=so)
 
 def inference(input_features, pixel_values, model_path):
-    session = build_session(ONNX_MODEL_PATH)
+    session = build_session(model_path)
 
     outputs = session.run(
         None, {"input_features": input_features, "pixel_values": pixel_values}
