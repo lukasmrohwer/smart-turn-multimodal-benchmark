@@ -38,6 +38,22 @@ The codebase requires the following dependencies for instance generation:
 - `av`
 - `Pillow`
 
+## Usage
+
+To generate the verification properties and the `instances.csv` index file, run the `generate_properties.py` script, providing a numeric random seed as an argument:
+
+```bash
+python generate_properties.py <random_seed>
+```
+
+Example:
+
+```bash
+python generate_properties.py 42
+```
+
+This will randomly select an example input pair, compute the reference outputs using the ONNX model, generate the `.vnnlib` specifications in the `vnnlib/` directory, and create the `instances.csv` file mapping the ONNX model to the generated specifications.
+
 ## Author & Acknowledgments
 
 **Author:** Lukas Rohwer
