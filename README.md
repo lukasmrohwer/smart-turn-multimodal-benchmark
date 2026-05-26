@@ -1,5 +1,7 @@
 # Smart Turn Multimodal Benchmark
 
+This repository contains the smart turn multimodal benchmark for VNNCOMP 2026 (Verification of Neural Networks Competition).
+
 ## Overview
 The **Smart Turn Multimodal Benchmark** is a VNN-LIB 2.0 compliant benchmark designed to evaluate the robustness of a multimodal neural network. The network takes both audio (`.wav`) and video (`.MP4`) inputs and is provided in the ONNX format. This benchmark generates safety properties by applying perturbations to the inputs (`AUDIO_EPS = 0.05` and `VIDEO_EPS = 0.03`) to verify the network's behavior under noisy conditions.
 
