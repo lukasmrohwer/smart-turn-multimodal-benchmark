@@ -23,7 +23,7 @@ def main():
     VIDEO_EPS = 0.03              # size of the input pertubation
     VNN_COMP_TIMEOUT = 100  # per-instance verification timeout
     ONNX_MODEL_PATH = "onnx/smart-turn-multimodal-cpu.onnx"
-    num_instances = 1 # max 4
+    num_instances = 4 # max 4
 
     inputs = [
         ("examples/1.wav", "examples/1.MP4"),
