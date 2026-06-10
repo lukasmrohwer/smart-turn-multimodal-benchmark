@@ -23,15 +23,28 @@ def main():
     VIDEO_EPS = 0.03              # size of the input pertubation
     VNN_COMP_TIMEOUT = 100  # per-instance verification timeout
     ONNX_MODEL_PATH = "onnx/smart-turn-multimodal-cpu.onnx"
-    num_instances = 4 # max 4
+    num_instances = 50
 
-    inputs = [
-        ("examples/1.wav", "examples/1.MP4"),
-        ("examples/2.wav", "examples/2.MP4"),
-        ("examples/3.wav", "examples/3.MP4"),
-        ("examples/4.wav", "examples/4.MP4")
-    ]
-    random.shuffle(inputs)
+    import glob
+    import os
+    
+    # Discover N (total numbered directories in examples/)
+    example_dirs = [d for d in glob.glob("examples/*") if os.path.isdir(d) and os.path.basename(d).isdigit()]
+    N = len(example_dirs)
+    
+    if N == 0:
+        print("Error: No numbered example subdirectories found in examples/")
+        sys.exit(1)
+        
+    # Generate 50 random numbers from 1 to N
+    random_indices = [random.randint(1, N) for _ in range(num_instances)]
+
+    inputs = []
+    for n in random_indices:
+        wav_file = f"examples/{n}/{n}.wav"
+        mp4_file = f"examples/{n}/{n}.MP4"
+        inputs.append((wav_file, mp4_file))
+
 
     i = 0
     instance_data = []
